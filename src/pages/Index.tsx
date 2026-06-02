@@ -64,7 +64,7 @@ const DRESSCODE_SWATCHES = [
   { color: "#c8b898", label: "Кремовый" },
 ];
 
-type Phase = "cover" | "unfolding" | "waving" | "exploding" | "content";
+type Phase = "cover" | "opening" | "content";
 
 export default function Index() {
   const [phase, setPhase] = useState<Phase>("cover");
@@ -78,10 +78,8 @@ export default function Index() {
   const handleOpen = () => {
     if (phase !== "cover") return;
     setRipples([Date.now()]);
-    setPhase("unfolding");
-    setTimeout(() => setPhase("waving"), 1000);
-    setTimeout(() => setPhase("exploding"), 3200);
-    setTimeout(() => setPhase("content"), 4100);
+    setPhase("opening");
+    setTimeout(() => setPhase("content"), 1400);
   };
 
   const handleConfirm = async (e: React.FormEvent) => {
@@ -103,17 +101,12 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen font-cormorant fabric-bg">
+    <div className={`min-h-screen font-cormorant ${phase === "cover" ? "fabric-idle" : "fabric-live"}`}>
 
       {/* ЗАСТАВКА */}
       {phase !== "content" && (
         <div
-          className={`fixed inset-0 z-50 flex flex-col items-center justify-between cursor-pointer
-            ${phase === "cover" ? "fabric-bg" : ""}
-            ${phase === "unfolding" ? "fabric-unfolding" : ""}
-            ${phase === "waving" ? "fabric-waving" : ""}
-            ${phase === "exploding" ? "fabric-waving overlay-exit pointer-events-none" : ""}
-          `}
+          className={`fixed inset-0 z-50 flex flex-col items-center justify-between cursor-pointer ${phase === "opening" ? "cover-fade-out pointer-events-none" : ""}`}
           onClick={handleOpen}
         >
 
@@ -139,7 +132,7 @@ export default function Index() {
                 <span key={r} className="ripple-ring absolute rounded-full"
                   style={{ width: 160, height: 160, marginLeft: -80, marginTop: -80, borderColor: `${C.olive}60` }} />
               ))}
-              <div className={phase === "exploding" ? "heart-explode" : phase === "unfolding" ? "heart-tap" : "heart-idle"}>
+              <div className={phase === "opening" ? "heart-tap" : "heart-idle"}>
                 <svg viewBox="0 0 200 190" width="170" height="160" fill="none">
                   <defs>
                     <clipPath id="heart-clip">
