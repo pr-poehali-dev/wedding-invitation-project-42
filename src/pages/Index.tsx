@@ -177,21 +177,33 @@ export default function Index() {
             {/* Оливковый декор */}
             <div className="absolute top-0 left-0 right-0 h-1" style={{ background: C.olive }} />
             <div className="relative z-10 text-center px-8 pt-20 pb-16 w-full max-w-sm mx-auto">
-              <p className="font-montserrat text-[10px] tracking-[0.4em] uppercase mb-3" style={{ color: C.olive }}>
-                ПРИГЛАШЕНИЕ
+              <p className="font-montserrat text-[10px] tracking-[0.4em] uppercase mb-4" style={{ color: C.olive }}>
+                ПРИГЛАШЕНИЕ НА СВАДЬБУ
               </p>
-              <p className="font-cormorant italic text-[20px] tracking-widest mb-10" style={{ color: C.brownMid }}>
-                на свадьбу
-              </p>
-              <h1 className="font-cormorant italic font-light text-[76px] leading-[1]" style={{ color: C.brown }}>
+              <div className="flex items-center gap-3 justify-center mb-10">
+                <span className="flex-1 h-px" style={{ background: `${C.olive}60` }} />
+                <span style={{ color: C.olive, fontSize: 14 }}>✦</span>
+                <span className="flex-1 h-px" style={{ background: `${C.olive}60` }} />
+              </div>
+              <h1 className="font-vibes leading-none" style={{ color: C.brown, fontSize: "92px" }}>
                 Кристина
               </h1>
-              <p className="font-cormorant italic text-[44px] my-0 leading-tight" style={{ color: C.olive }}>
-                &amp;
-              </p>
-              <h1 className="font-cormorant italic font-light text-[76px] leading-[1]" style={{ color: C.brown }}>
+              <div className="flex items-center gap-4 justify-center my-1">
+                <span className="w-10 h-px" style={{ background: C.sand }} />
+                <span className="font-vibes leading-none" style={{ color: C.olive, fontSize: "52px" }}>&amp;</span>
+                <span className="w-10 h-px" style={{ background: C.sand }} />
+              </div>
+              <h1 className="font-vibes leading-none" style={{ color: C.brown, fontSize: "92px" }}>
                 Данил
               </h1>
+              <div className="flex items-center gap-3 justify-center mt-10">
+                <span className="flex-1 h-px" style={{ background: `${C.olive}60` }} />
+                <span style={{ color: C.olive, fontSize: 14 }}>✦</span>
+                <span className="flex-1 h-px" style={{ background: `${C.olive}60` }} />
+              </div>
+              <p className="font-montserrat text-[11px] tracking-[0.3em] uppercase mt-4" style={{ color: C.brownMid }}>
+                8 августа 2026
+              </p>
             </div>
             <div className="absolute bottom-0 left-0 right-0 h-1" style={{ background: C.olive }} />
           </section>

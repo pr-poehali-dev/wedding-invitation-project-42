@@ -22,6 +22,7 @@ export default {
 			cormorant: ['Cormorant Garamond', 'serif'],
 			'cormorant-sc': ['Cormorant SC', 'serif'],
 			montserrat: ['Montserrat', 'sans-serif'],
+			vibes: ['Great Vibes', 'cursive'],
 		},
 		extend: {
 			colors: {
