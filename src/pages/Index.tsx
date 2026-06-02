@@ -3,21 +3,21 @@ import { useState, useEffect } from "react";
 const WEDDING_DATE = new Date("2026-08-08T16:00:00");
 const CONFIRM_URL = "https://functions.poehali.dev/89ebb219-0410-4069-b584-255ca16e1982";
 
-// Палитра — кремовый фон, белый текст
+// Палитра — кремовый фон, тёмный текст
 const C = {
   bg: "#e8dcc8",
   bgDark: "#e8dcc8",
   section2: "#e8dcc8",
-  olive: "rgba(255,255,255,0.55)",
-  oliveMid: "rgba(255,255,255,0.45)",
-  oliveLight: "rgba(255,255,255,0.35)",
-  brown: "#ffffff",
-  brownMid: "rgba(255,255,255,0.85)",
+  olive: "#5a4a2a",
+  oliveMid: "#6b5a38",
+  oliveLight: "#8a7550",
+  brown: "#2e1f0e",
+  brownMid: "#3d2a14",
   cream: "#e8dcc8",
-  sand: "rgba(255,255,255,0.4)",
-  text: "#ffffff",
-  textMid: "rgba(255,255,255,0.85)",
-  textLight: "rgba(255,255,255,0.7)",
+  sand: "#8a7550",
+  text: "#2e1f0e",
+  textMid: "#4a3520",
+  textLight: "#6b5538",
 };
 
 function useCountdown(target: Date) {
@@ -431,7 +431,7 @@ export default function Index() {
                       className="w-full py-4 font-cormorant italic text-[20px] tracking-wide transition-all relative"
                       style={{
                         border: `1px solid ${C.olive}`,
-                        color: loading ? C.textLight : C.cream,
+                        color: loading ? C.textLight : "#fff",
                         background: loading ? "transparent" : C.olive,
                       }}
                     >
