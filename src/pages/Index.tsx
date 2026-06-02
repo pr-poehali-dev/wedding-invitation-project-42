@@ -185,7 +185,7 @@ export default function Index() {
                 <span style={{ color: C.olive, fontSize: 14 }}>✦</span>
                 <span className="flex-1 h-px" style={{ background: `${C.olive}60` }} />
               </div>
-              <h1 className="font-vibes leading-none" style={{ color: C.brown, fontSize: "92px" }}>
+              <h1 className="font-vibes leading-none" style={{ color: C.brown, fontSize: "80px", marginLeft: "-8px" }}>
                 Кристина
               </h1>
               <div className="flex items-center gap-4 justify-center my-1">
@@ -331,7 +331,7 @@ export default function Index() {
               </h2>
               <div className="overflow-hidden mb-8 aspect-[4/3]">
                 <img
-                  src="https://cdn.poehali.dev/projects/a540970c-91ee-4184-9179-bffb7270ac57/files/3e2deb22-55dc-407e-a2af-34e55eb3aeb1.jpg"
+                  src="https://cdn.poehali.dev/projects/a540970c-91ee-4184-9179-bffb7270ac57/bucket/236258e1-3b0b-4b67-920c-0c1fbc224fc2.jpeg"
                   alt="Огни Баку"
                   className="w-full h-full object-cover"
                 />
