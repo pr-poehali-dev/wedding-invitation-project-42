@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS guests (
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL,
+  confirmed_at TIMESTAMP DEFAULT NOW()
+);

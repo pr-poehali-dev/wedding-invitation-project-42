@@ -1,0 +1,13 @@
+{
+  "tests": [
+    {
+      "name": "Confirm guest",
+      "method": "POST",
+      "path": "/",
+      "body": {"name": "Тест Гость"},
+      "expectedStatus": 200,
+      "expectedBody": {"ok": true},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
