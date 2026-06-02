@@ -194,7 +194,7 @@ export default function Index() {
                 <span className="w-10 h-px" style={{ background: C.sand }} />
               </div>
               <h1 className="font-vibes leading-none" style={{ color: C.brown, fontSize: "92px" }}>
-                Данил
+                Даниил
               </h1>
               <div className="flex items-center gap-3 justify-center mt-10">
                 <span className="flex-1 h-px" style={{ background: `${C.olive}60` }} />
