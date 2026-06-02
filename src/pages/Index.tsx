@@ -119,6 +119,11 @@ export default function Index() {
               <h1 className="font-cormorant italic font-light text-[52px] leading-none animate-fade-up delay-200" style={{ color: C.brown }}>
                 Приглашение
               </h1>
+              <div className="flex items-center gap-3 justify-center mt-5 animate-fade-up delay-300">
+                <span className="flex-1 h-px" style={{ background: `${C.olive}50` }} />
+                <span className="font-vibes text-[32px] leading-none" style={{ color: C.oliveMid }}>Кристина & Даниил</span>
+                <span className="flex-1 h-px" style={{ background: `${C.olive}50` }} />
+              </div>
             </div>
 
             {/* Сердце */}
@@ -177,7 +182,7 @@ export default function Index() {
                 <span style={{ color: C.olive, fontSize: 14 }}>✦</span>
                 <span className="flex-1 h-px" style={{ background: `${C.olive}60` }} />
               </div>
-              <h1 className="font-vibes leading-none" style={{ color: C.brown, fontSize: "80px", marginLeft: "-8px" }}>
+              <h1 className="font-vibes leading-none" style={{ color: C.brown, fontSize: "80px", marginLeft: "-8px", textShadow: "0 2px 12px rgba(46,31,14,0.13)" }}>
                 Кристина
               </h1>
               <div className="flex items-center gap-4 justify-center my-1">
@@ -185,7 +190,7 @@ export default function Index() {
                 <span className="font-vibes leading-none" style={{ color: C.olive, fontSize: "52px" }}>&amp;</span>
                 <span className="w-10 h-px" style={{ background: C.sand }} />
               </div>
-              <h1 className="font-vibes leading-none" style={{ color: C.brown, fontSize: "92px" }}>
+              <h1 className="font-vibes leading-none" style={{ color: C.brown, fontSize: "92px", textShadow: "0 2px 12px rgba(46,31,14,0.13)" }}>
                 Даниил
               </h1>
               <div className="flex items-center gap-3 justify-center mt-10">
@@ -199,6 +204,13 @@ export default function Index() {
             </div>
             <div className="absolute bottom-0 left-0 right-0 h-1" style={{ background: C.olive }} />
           </section>
+
+          {/* Разделитель */}
+          <div className="flex items-center gap-4 px-8 py-2 max-w-sm mx-auto">
+            <span className="flex-1 h-px" style={{ background: `${C.olive}30` }} />
+            <span style={{ color: C.sand, fontSize: 18, letterSpacing: 6 }}>✦ ✦ ✦</span>
+            <span className="flex-1 h-px" style={{ background: `${C.olive}30` }} />
+          </div>
 
           {/* СЕКЦИЯ 2: Дорогие гости */}
           <section className="relative px-8 py-16 max-w-sm mx-auto overflow-hidden">
@@ -248,6 +260,13 @@ export default function Index() {
             </div>
           </section>
 
+          {/* Разделитель */}
+          <div className="flex items-center gap-4 px-8 py-2 max-w-sm mx-auto">
+            <span className="flex-1 h-px" style={{ background: `${C.olive}30` }} />
+            <span style={{ color: C.sand, fontSize: 18, letterSpacing: 6 }}>✦ ✦ ✦</span>
+            <span className="flex-1 h-px" style={{ background: `${C.olive}30` }} />
+          </div>
+
           {/* СЕКЦИЯ 3: Обратный отсчёт */}
           <section className="relative px-8 py-16 text-center overflow-hidden">
             <div className="absolute right-[-20px] top-8 w-40 h-40 rounded-full opacity-15"
@@ -276,6 +295,13 @@ export default function Index() {
               ))}
             </div>
           </section>
+
+          {/* Разделитель */}
+          <div className="flex items-center gap-4 px-8 py-2 max-w-sm mx-auto">
+            <span className="flex-1 h-px" style={{ background: `${C.olive}30` }} />
+            <span style={{ color: C.sand, fontSize: 18, letterSpacing: 6 }}>✦ ✦ ✦</span>
+            <span className="flex-1 h-px" style={{ background: `${C.olive}30` }} />
+          </div>
 
           {/* СЕКЦИЯ 4: План дня */}
           <section className="relative px-8 py-16 max-w-sm mx-auto overflow-hidden">
@@ -315,6 +341,13 @@ export default function Index() {
             </div>
           </section>
 
+          {/* Разделитель */}
+          <div className="flex items-center gap-4 px-8 py-2 max-w-sm mx-auto">
+            <span className="flex-1 h-px" style={{ background: `${C.olive}30` }} />
+            <span style={{ color: C.sand, fontSize: 18, letterSpacing: 6 }}>✦ ✦ ✦</span>
+            <span className="flex-1 h-px" style={{ background: `${C.olive}30` }} />
+          </div>
+
           {/* СЕКЦИЯ 5: Место */}
           <section className="relative overflow-hidden">
             <div className="px-8 py-16 max-w-sm mx-auto">
@@ -344,6 +377,13 @@ export default function Index() {
               </div>
             </div>
           </section>
+
+          {/* Разделитель */}
+          <div className="flex items-center gap-4 px-8 py-2 max-w-sm mx-auto">
+            <span className="flex-1 h-px" style={{ background: `${C.olive}30` }} />
+            <span style={{ color: C.sand, fontSize: 18, letterSpacing: 6 }}>✦ ✦ ✦</span>
+            <span className="flex-1 h-px" style={{ background: `${C.olive}30` }} />
+          </div>
 
           {/* СЕКЦИЯ 6: Дресс-код */}
           <section className="px-8 py-16 max-w-sm mx-auto text-center">
@@ -378,6 +418,13 @@ export default function Index() {
               </p>
             </div>
           </section>
+
+          {/* Разделитель */}
+          <div className="flex items-center gap-4 px-8 py-2 max-w-sm mx-auto">
+            <span className="flex-1 h-px" style={{ background: `${C.olive}30` }} />
+            <span style={{ color: C.sand, fontSize: 18, letterSpacing: 6 }}>✦ ✦ ✦</span>
+            <span className="flex-1 h-px" style={{ background: `${C.olive}30` }} />
+          </div>
 
           {/* СЕКЦИЯ 7: Подтвердить присутствие */}
           <section className="relative px-8 py-16 overflow-hidden">
