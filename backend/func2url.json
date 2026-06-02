@@ -1,3 +1,4 @@
 {
+  "get-guests": "https://functions.poehali.dev/7b7fd222-2882-4f6e-a2fc-48d644fcc184",
   "confirm-guest": "https://functions.poehali.dev/89ebb219-0410-4069-b584-255ca16e1982"
 }
