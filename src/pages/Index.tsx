@@ -393,12 +393,17 @@ export default function Index() {
             <p className="font-cormorant font-light text-[17px] leading-relaxed mb-8" style={{ color: C.textMid }}>
               Мы будем очень рады, если вы<br />поддержите цветовую гамму праздника
             </p>
-            <div className="overflow-hidden rounded-sm" style={{ imageRendering: "crisp-edges" }}>
+            <div className="overflow-hidden rounded-sm" style={{ aspectRatio: "3/4" }}>
               <img
                 src="https://cdn.poehali.dev/projects/a540970c-91ee-4184-9179-bffb7270ac57/bucket/d3171644-da01-4b19-9bd0-adca2e3fffaf.png"
                 alt="Дресс-код"
-                className="w-full h-auto"
-                style={{ filter: "contrast(1.05) saturate(1.1) sharpen(1)", imageRendering: "high-quality" }}
+                className="w-full h-full"
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "center 30%",
+                  filter: "contrast(1.05) saturate(1.1)",
+                  transform: "scale(1.08)",
+                }}
               />
             </div>
           </section>
