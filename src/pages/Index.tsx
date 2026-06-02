@@ -468,7 +468,7 @@ export default function Index() {
                 Ждём вас с нетерпением<br />и любовью
               </p>
               <h2 className="font-cormorant italic font-light text-[48px]" style={{ color: C.brown }}>
-                Кристина &amp; Данил
+                Кристина &amp; Даниил
               </h2>
               <div className="flex items-center gap-4 mt-6 justify-center">
                 <span className="w-16 h-px" style={{ background: `${C.olive}80` }} />
