@@ -317,23 +317,26 @@ export default function Index() {
               <h2 className="font-cormorant italic font-light text-[48px] leading-[1.1] mb-8 text-center" style={{ color: C.brown }}>
                 Место<br />торжества
               </h2>
-              <div className="rounded-sm overflow-hidden mb-6 aspect-[4/3] flex items-center justify-center"
-                style={{ background: C.bgDark }}>
+              <div className="overflow-hidden mb-8 aspect-[4/3]">
                 <img
-                  src="https://sun9-68.userapi.com/uU5xZx7KT-TxZ1cdph2oFb_-w6MU1Dh0QCrzfw/b-k8RfdfMzU.jpg"
+                  src="https://cdn.poehali.dev/projects/a540970c-91ee-4184-9179-bffb7270ac57/files/3e2deb22-55dc-407e-a2af-34e55eb3aeb1.jpg"
                   alt="Огни Баку"
                   className="w-full h-full object-cover"
-                  onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
                 />
               </div>
-              <div className="text-center">
-                <p className="font-cormorant italic text-[28px] mb-1" style={{ color: C.brown }}>
+              {/* Надписи в рамке */}
+              <div className="relative border p-6 text-center" style={{ borderColor: `${C.olive}50` }}>
+                <span className="absolute top-0 left-0 w-5 h-5 border-t border-l" style={{ borderColor: C.olive }} />
+                <span className="absolute top-0 right-0 w-5 h-5 border-t border-r" style={{ borderColor: C.olive }} />
+                <span className="absolute bottom-0 left-0 w-5 h-5 border-b border-l" style={{ borderColor: C.olive }} />
+                <span className="absolute bottom-0 right-0 w-5 h-5 border-b border-r" style={{ borderColor: C.olive }} />
+                <p className="font-cormorant italic text-[26px] mb-1" style={{ color: C.brown }}>
                   Ресторан «Огни Баку»
                 </p>
-                <p className="font-montserrat font-light text-[13px] tracking-wider" style={{ color: C.textLight }}>
+                <div className="w-10 h-px mx-auto my-3" style={{ background: `${C.olive}60` }} />
+                <p className="font-montserrat font-light text-[12px] tracking-wider uppercase" style={{ color: C.textLight }}>
                   пгт Васильево, Республика Татарстан
                 </p>
-                <div className="w-12 h-px mx-auto mt-4" style={{ background: `${C.olive}80` }} />
               </div>
             </div>
           </section>
@@ -386,7 +389,11 @@ export default function Index() {
 
               {submitted ? (
                 <div className="text-center py-8">
-                  <div className="text-[48px] mb-5">🌿</div>
+                  <div className="flex items-center gap-3 justify-center mb-5">
+                    <span className="w-10 h-px" style={{ background: `${C.olive}60` }} />
+                    <span style={{ color: C.olive }}>✦</span>
+                    <span className="w-10 h-px" style={{ background: `${C.olive}60` }} />
+                  </div>
                   <p className="font-cormorant italic text-[28px] mb-2" style={{ color: C.brown }}>
                     Спасибо, {name}!
                   </p>
@@ -428,7 +435,7 @@ export default function Index() {
                       <span className="absolute top-0 right-0 w-3 h-3 border-t border-r" style={{ borderColor: C.oliveLight }} />
                       <span className="absolute bottom-0 left-0 w-3 h-3 border-b border-l" style={{ borderColor: C.oliveLight }} />
                       <span className="absolute bottom-0 right-0 w-3 h-3 border-b border-r" style={{ borderColor: C.oliveLight }} />
-                      {loading ? "Отправляем..." : "Я приду на свадьбу ❤"}
+                      {loading ? "Отправляем..." : "Я приду на свадьбу"}
                     </button>
                   </div>
                 </form>
@@ -446,7 +453,7 @@ export default function Index() {
             }} />
             <div className="relative z-10">
               <p className="font-cormorant italic font-light text-[22px] leading-relaxed mb-8" style={{ color: C.text }}>
-                Ждём вас с нетерпением<br />и любовью ❤
+                Ждём вас с нетерпением<br />и любовью
               </p>
               <h2 className="font-cormorant italic font-light text-[48px]" style={{ color: C.brown }}>
                 Кристина &amp; Данил
