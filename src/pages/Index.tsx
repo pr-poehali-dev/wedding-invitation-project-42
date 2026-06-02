@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const WEDDING_DATE = new Date("2026-09-05T16:00:00");
+const WEDDING_DATE = new Date("2026-08-08T16:00:00");
 const CONFIRM_URL = "https://functions.poehali.dev/89ebb219-0410-4069-b584-255ca16e1982";
 
 // Палитра мудборда
@@ -39,19 +39,21 @@ function useCountdown(target: Date) {
   return time;
 }
 
+// Август 2026: 1-е — суббота (индекс 5 при ПН=0)
 const CALENDAR_DAYS: (number | null)[] = [
-  null, 1, 2, 3, 4, 5, 6,
-  7, 8, 9, 10, 11, 12, 13,
-  14, 15, 16, 17, 18, 19, 20,
-  21, 22, 23, 24, 25, 26, 27,
-  28, 29, 30, null, null, null, null,
+  null, null, null, null, null, 1, 2,
+  3, 4, 5, 6, 7, 8, 9,
+  10, 11, 12, 13, 14, 15, 16,
+  17, 18, 19, 20, 21, 22, 23,
+  24, 25, 26, 27, 28, 29, 30,
+  31, null, null, null, null, null, null,
 ];
 
 const SCHEDULE = [
-  { time: "15:30", title: "Сбор гостей", desc: "Захватите с собой хорошее настроение и улыбки" },
-  { time: "16:00", title: "Выездная регистрация", desc: "Торжественный момент создания новой семьи" },
-  { time: "16:30", title: "Начало банкета", desc: "Музыка, танцы и незабываемые моменты" },
-  { time: "23:00", title: "Завершение вечера", desc: "Спасибо, что разделили этот день с нами" },
+  { time: "16:00", title: "Сбор гостей", desc: "Захватите с собой хорошее настроение и улыбки" },
+  { time: "16:30", title: "Выездная регистрация", desc: "Торжественный момент создания новой семьи" },
+  { time: "17:00", title: "Начало банкета", desc: "Музыка, танцы и незабываемые моменты" },
+  { time: "22:00", title: "Завершение вечера", desc: "Спасибо, что разделили этот день с нами" },
 ];
 
 // Цвета дресс-кода с мудборда
@@ -209,7 +211,7 @@ export default function Index() {
               </div>
               <div className="text-center mb-8">
                 <p className="font-cormorant-sc font-light text-[28px] tracking-[0.12em]" style={{ color: C.brownMid }}>
-                  5 СЕНТЯБРЯ 2026
+                  8 АВГУСТА 2026
                 </p>
                 <div className="w-16 h-px mx-auto mt-3" style={{ background: `${C.olive}80` }} />
               </div>
@@ -225,8 +227,8 @@ export default function Index() {
                     <div key={i} className="py-1 flex items-center justify-center">
                       {day ? (
                         <span className="font-cormorant text-[18px] w-9 h-9 flex items-center justify-center relative"
-                          style={{ color: day === 5 ? C.brown : C.textMid }}>
-                          {day === 5 && (
+                          style={{ color: day === 8 ? C.brown : C.textMid }}>
+                          {day === 8 && (
                             <svg className="absolute inset-0 w-full h-full" viewBox="0 0 36 36" fill="none">
                               <path d="M18 28 C12 24 4 20 4 13 C4 8 8 5 13 6.5 C15.2 7.2 17 9 18 11 C19 9 20.8 7.2 23 6.5 C28 5 32 8 32 13 C32 20 24 24 18 28Z"
                                 stroke={C.olive} strokeWidth="1.2" fill="none" />
@@ -379,7 +381,7 @@ export default function Index() {
                 Подтвердить<br />присутствие
               </h2>
               <p className="font-cormorant font-light text-[17px] text-center mb-10 leading-relaxed" style={{ color: C.textMid }}>
-                Пожалуйста, дайте нам знать<br />до 1 августа 2026 года
+                Пожалуйста, дайте нам знать<br />до 1 июля 2026 года
               </p>
 
               {submitted ? (
@@ -455,7 +457,7 @@ export default function Index() {
                 <span className="w-16 h-px" style={{ background: `${C.olive}80` }} />
               </div>
               <p className="font-montserrat text-[11px] tracking-[0.3em] mt-6 uppercase" style={{ color: C.olive }}>
-                5 сентября 2026
+                8 августа 2026
               </p>
             </div>
           </section>

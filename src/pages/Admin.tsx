@@ -130,7 +130,7 @@ export default function Admin() {
         style={{ background: C.olive }}>
         <div>
           <p className="font-montserrat text-[10px] tracking-[0.3em] uppercase text-white/70">
-            Кристина &amp; Данил · 5 сентября 2026
+            Кристина &amp; Данил · 8 августа 2026
           </p>
           <p className="font-cormorant italic text-white text-[20px] leading-tight mt-0.5">
             Список гостей
