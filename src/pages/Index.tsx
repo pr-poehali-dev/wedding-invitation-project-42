@@ -64,7 +64,7 @@ const DRESSCODE_SWATCHES = [
   { color: "#c8b898", label: "Кремовый" },
 ];
 
-type Phase = "cover" | "exploding" | "content";
+type Phase = "cover" | "unfolding" | "waving" | "exploding" | "content";
 
 export default function Index() {
   const [phase, setPhase] = useState<Phase>("cover");
@@ -78,8 +78,10 @@ export default function Index() {
   const handleOpen = () => {
     if (phase !== "cover") return;
     setRipples([Date.now()]);
-    setPhase("exploding");
-    setTimeout(() => setPhase("content"), 900);
+    setPhase("unfolding");
+    setTimeout(() => setPhase("waving"), 1000);
+    setTimeout(() => setPhase("exploding"), 3200);
+    setTimeout(() => setPhase("content"), 4100);
   };
 
   const handleConfirm = async (e: React.FormEvent) => {
@@ -106,7 +108,12 @@ export default function Index() {
       {/* ЗАСТАВКА */}
       {phase !== "content" && (
         <div
-          className={`fixed inset-0 z-50 flex flex-col items-center justify-between cursor-pointer fabric-bg ${phase === "exploding" ? "overlay-exit pointer-events-none" : ""}`}
+          className={`fixed inset-0 z-50 flex flex-col items-center justify-between cursor-pointer
+            ${phase === "cover" ? "fabric-bg" : ""}
+            ${phase === "unfolding" ? "fabric-unfolding" : ""}
+            ${phase === "waving" ? "fabric-waving" : ""}
+            ${phase === "exploding" ? "fabric-waving overlay-exit pointer-events-none" : ""}
+          `}
           onClick={handleOpen}
         >
 
@@ -132,7 +139,7 @@ export default function Index() {
                 <span key={r} className="ripple-ring absolute rounded-full"
                   style={{ width: 160, height: 160, marginLeft: -80, marginTop: -80, borderColor: `${C.olive}60` }} />
               ))}
-              <div className={phase === "exploding" ? "heart-explode" : "heart-idle"}>
+              <div className={phase === "exploding" ? "heart-explode" : phase === "unfolding" ? "heart-tap" : "heart-idle"}>
                 <svg viewBox="0 0 200 190" width="170" height="160" fill="none">
                   <defs>
                     <clipPath id="heart-clip">
