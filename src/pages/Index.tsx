@@ -387,35 +387,19 @@ export default function Index() {
 
           {/* СЕКЦИЯ 6: Дресс-код */}
           <section className="px-8 py-16 max-w-sm mx-auto text-center">
-            <h2 className="font-cormorant italic font-light text-[48px] leading-[1.1] mb-8" style={{ color: C.brown }}>
+            <h2 className="font-cormorant italic font-light text-[48px] leading-[1.1] mb-4" style={{ color: C.brown }}>
               Дресс-код
             </h2>
-            <div className="border p-8 relative mb-8" style={{ borderColor: `${C.olive}50` }}>
-              <span className="absolute top-0 left-0 w-4 h-4 border-t border-l" style={{ borderColor: C.olive }} />
-              <span className="absolute top-0 right-0 w-4 h-4 border-t border-r" style={{ borderColor: C.olive }} />
-              <span className="absolute bottom-0 left-0 w-4 h-4 border-b border-l" style={{ borderColor: C.olive }} />
-              <span className="absolute bottom-0 right-0 w-4 h-4 border-b border-r" style={{ borderColor: C.olive }} />
-              <p className="font-cormorant italic text-[24px] mb-3" style={{ color: C.brown }}>
-                Природные оттенки
-              </p>
-              <div className="w-10 h-px mx-auto mb-5" style={{ background: `${C.olive}80` }} />
-              {/* Цветовые свотчи */}
-              <div className="flex justify-center gap-4 mb-5">
-                {DRESSCODE_SWATCHES.map(s => (
-                  <div key={s.color} className="flex flex-col items-center gap-2">
-                    <div className="w-10 h-10 rounded-full border border-white/40 shadow-sm" style={{ background: s.color }} />
-                    <span className="font-montserrat text-[10px] tracking-wide" style={{ color: C.textLight }}>
-                      {s.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <p className="font-cormorant font-light text-[17px] leading-relaxed" style={{ color: C.textMid }}>
-                Оливковый, зелёный шалфей,<br />тёмно-коричневый, кремовый.
-              </p>
-              <p className="font-cormorant italic text-[15px] mt-2" style={{ color: C.textLight }}>
-                Избегайте белого и чёрного.
-              </p>
+            <p className="font-cormorant font-light text-[17px] leading-relaxed mb-8" style={{ color: C.textMid }}>
+              Мы будем очень рады, если вы<br />поддержите цветовую гамму праздника
+            </p>
+            <div className="overflow-hidden rounded-sm" style={{ imageRendering: "crisp-edges" }}>
+              <img
+                src="https://cdn.poehali.dev/projects/a540970c-91ee-4184-9179-bffb7270ac57/bucket/d3171644-da01-4b19-9bd0-adca2e3fffaf.png"
+                alt="Дресс-код"
+                className="w-full h-auto"
+                style={{ filter: "contrast(1.05) saturate(1.1) sharpen(1)", imageRendering: "high-quality" }}
+              />
             </div>
           </section>
 
