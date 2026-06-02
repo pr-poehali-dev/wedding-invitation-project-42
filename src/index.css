@@ -192,3 +192,86 @@
 .delay-1600 {
   animation-delay: 1.6s;
 }
+
+/* === Переход с заставки === */
+@keyframes heartPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes heartExplode {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(18);
+    opacity: 0;
+  }
+}
+
+@keyframes overlayFadeOut {
+  0% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
+@keyframes contentReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heart-idle {
+  animation: heartPulse 2.2s ease-in-out infinite;
+}
+
+.heart-explode {
+  animation: heartExplode 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.overlay-exit {
+  animation: overlayFadeOut 0.9s ease forwards;
+  pointer-events: none;
+}
+
+.ripple-ring {
+  animation: ripple 0.8s ease-out forwards;
+}
+
+.content-reveal {
+  animation: contentReveal 0.7s ease forwards;
+}
