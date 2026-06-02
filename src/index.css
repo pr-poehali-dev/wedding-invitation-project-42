@@ -275,3 +275,87 @@
 .content-reveal {
   animation: contentReveal 0.7s ease forwards;
 }
+
+/* === Анимация ткани === */
+@keyframes fabricWave {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 60% 30%;
+  }
+  50% {
+    background-position: 100% 60%;
+  }
+  75% {
+    background-position: 40% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes fabricShimmer {
+  0% {
+    opacity: 0.18;
+    transform: skewY(-1deg) scaleX(1);
+  }
+  30% {
+    opacity: 0.3;
+    transform: skewY(0.5deg) scaleX(1.01);
+  }
+  60% {
+    opacity: 0.22;
+    transform: skewY(-0.5deg) scaleX(0.99);
+  }
+  100% {
+    opacity: 0.18;
+    transform: skewY(-1deg) scaleX(1);
+  }
+}
+
+.fabric-bg {
+  position: relative;
+  background-color: #e8dcc8;
+}
+
+.fabric-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.22) 0px,
+      rgba(255, 255, 255, 0.22) 1px,
+      transparent 1px,
+      transparent 18px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.1) 0px,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 18px
+    );
+  background-size: 200% 200%;
+  animation: fabricWave 8s ease-in-out infinite;
+}
+
+.fabric-bg::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    130deg,
+    rgba(255, 255, 255, 0) 0px,
+    rgba(255, 255, 255, 0.28) 2px,
+    rgba(255, 255, 255, 0) 4px,
+    rgba(255, 255, 255, 0) 28px
+  );
+  animation: fabricShimmer 5s ease-in-out infinite alternate;
+}

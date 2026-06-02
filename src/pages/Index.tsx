@@ -3,21 +3,21 @@ import { useState, useEffect } from "react";
 const WEDDING_DATE = new Date("2026-08-08T16:00:00");
 const CONFIRM_URL = "https://functions.poehali.dev/89ebb219-0410-4069-b584-255ca16e1982";
 
-// Палитра мудборда
+// Палитра — кремовый фон, белый текст
 const C = {
-  bg: "#f2ede4",
-  bgDark: "#e8dfd0",
-  section2: "#eae3d6",
-  olive: "#5a6642",
-  oliveMid: "#7a8a58",
-  oliveLight: "#9aaa78",
-  brown: "#4a3428",
-  brownMid: "#6b4c38",
-  cream: "#f0e8d5",
-  sand: "#c8b898",
-  text: "#2e2218",
-  textMid: "#5a4535",
-  textLight: "#8a7560",
+  bg: "#e8dcc8",
+  bgDark: "#e8dcc8",
+  section2: "#e8dcc8",
+  olive: "rgba(255,255,255,0.55)",
+  oliveMid: "rgba(255,255,255,0.45)",
+  oliveLight: "rgba(255,255,255,0.35)",
+  brown: "#ffffff",
+  brownMid: "rgba(255,255,255,0.85)",
+  cream: "#e8dcc8",
+  sand: "rgba(255,255,255,0.4)",
+  text: "#ffffff",
+  textMid: "rgba(255,255,255,0.85)",
+  textLight: "rgba(255,255,255,0.7)",
 };
 
 function useCountdown(target: Date) {
@@ -101,20 +101,15 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen font-cormorant" style={{ background: C.bg }}>
+    <div className="min-h-screen font-cormorant fabric-bg">
 
       {/* ЗАСТАВКА */}
       {phase !== "content" && (
         <div
-          className={`fixed inset-0 z-50 flex flex-col items-center justify-between cursor-pointer ${phase === "exploding" ? "overlay-exit pointer-events-none" : ""}`}
-          style={{ background: `linear-gradient(160deg, ${C.bgDark} 0%, #ddd4be 50%, #cdc2a6 100%)` }}
+          className={`fixed inset-0 z-50 flex flex-col items-center justify-between cursor-pointer fabric-bg ${phase === "exploding" ? "overlay-exit pointer-events-none" : ""}`}
           onClick={handleOpen}
         >
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute inset-0 opacity-40" style={{
-              backgroundImage: `radial-gradient(ellipse 80% 60% at 70% 25%, #f5ede0 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 20% 80%, #e0d5bc 0%, transparent 60%)`
-            }} />
-          </div>
+
 
           <div className="relative z-10 flex flex-col items-center justify-between h-full w-full max-w-sm mx-auto px-8 pt-24 pb-24">
             <div className="text-center">
@@ -169,11 +164,8 @@ export default function Index() {
 
           {/* СЕКЦИЯ 1: Имена */}
           <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
-            style={{ background: `linear-gradient(160deg, ${C.bgDark} 0%, #ddd4be 40%, #cdc2a6 100%)` }}>
-            <div className="absolute inset-0 pointer-events-none" style={{
-              backgroundImage: `radial-gradient(ellipse 80% 60% at 75% 25%, #f5ede0 0%, transparent 55%), radial-gradient(ellipse 60% 80% at 15% 75%, #ddd0b5 0%, transparent 55%)`,
-              opacity: 0.5
-            }} />
+            style={{ background: "transparent" }}>
+
             {/* Оливковый декор */}
             <div className="absolute top-0 left-0 right-0 h-1" style={{ background: C.olive }} />
             <div className="relative z-10 text-center px-8 pt-20 pb-16 w-full max-w-sm mx-auto">
@@ -209,7 +201,7 @@ export default function Index() {
           </section>
 
           {/* СЕКЦИЯ 2: Дорогие гости */}
-          <section className="relative px-8 py-16 max-w-sm mx-auto overflow-hidden" style={{ background: C.bg }}>
+          <section className="relative px-8 py-16 max-w-sm mx-auto overflow-hidden">
             <div className="absolute right-[-20px] top-16 w-36 h-36 rounded-full opacity-20" style={{ background: `radial-gradient(circle, ${C.olive}, transparent)` }} />
             <div className="absolute left-[-20px] bottom-28 w-48 h-48 rounded-full opacity-15" style={{ background: `radial-gradient(circle, ${C.brownMid}, transparent)` }} />
             <div className="relative z-10">
@@ -257,7 +249,7 @@ export default function Index() {
           </section>
 
           {/* СЕКЦИЯ 3: Обратный отсчёт */}
-          <section className="relative px-8 py-16 text-center overflow-hidden" style={{ background: C.section2 }}>
+          <section className="relative px-8 py-16 text-center overflow-hidden">
             <div className="absolute right-[-20px] top-8 w-40 h-40 rounded-full opacity-15"
               style={{ background: `radial-gradient(circle, ${C.olive}, transparent)` }} />
             <p className="font-montserrat text-[11px] tracking-[0.35em] uppercase mb-10" style={{ color: C.olive }}>
@@ -286,7 +278,7 @@ export default function Index() {
           </section>
 
           {/* СЕКЦИЯ 4: План дня */}
-          <section className="relative px-8 py-16 max-w-sm mx-auto overflow-hidden" style={{ background: C.bg }}>
+          <section className="relative px-8 py-16 max-w-sm mx-auto overflow-hidden">
             <div className="absolute right-[-10px] top-16 w-36 h-36 rounded-full opacity-20"
               style={{ background: `radial-gradient(circle, ${C.olive}, transparent)` }} />
             <div className="absolute left-[-20px] bottom-20 w-44 h-44 rounded-full opacity-15"
@@ -324,7 +316,7 @@ export default function Index() {
           </section>
 
           {/* СЕКЦИЯ 5: Место */}
-          <section className="relative overflow-hidden" style={{ background: C.section2 }}>
+          <section className="relative overflow-hidden">
             <div className="px-8 py-16 max-w-sm mx-auto">
               <h2 className="font-cormorant italic font-light text-[48px] leading-[1.1] mb-8 text-center" style={{ color: C.brown }}>
                 Место<br />торжества
@@ -354,7 +346,7 @@ export default function Index() {
           </section>
 
           {/* СЕКЦИЯ 6: Дресс-код */}
-          <section className="px-8 py-16 max-w-sm mx-auto text-center" style={{ background: C.bg }}>
+          <section className="px-8 py-16 max-w-sm mx-auto text-center">
             <h2 className="font-cormorant italic font-light text-[48px] leading-[1.1] mb-8" style={{ color: C.brown }}>
               Дресс-код
             </h2>
@@ -388,7 +380,7 @@ export default function Index() {
           </section>
 
           {/* СЕКЦИЯ 7: Подтвердить присутствие */}
-          <section className="relative px-8 py-16 overflow-hidden" style={{ background: C.section2 }}>
+          <section className="relative px-8 py-16 overflow-hidden">
             <div className="absolute left-[-20px] top-10 w-40 h-40 rounded-full opacity-15"
               style={{ background: `radial-gradient(circle, ${C.olive}, transparent)` }} />
             <div className="relative z-10 max-w-sm mx-auto">
@@ -456,12 +448,11 @@ export default function Index() {
           </section>
 
           {/* СЕКЦИЯ 8: Финал */}
-          <section className="relative min-h-[55vh] flex flex-col items-center justify-center px-8 py-20 text-center overflow-hidden"
-            style={{ background: `linear-gradient(180deg, ${C.bgDark} 0%, #cdc2a6 100%)` }}>
+          <section className="relative min-h-[55vh] flex flex-col items-center justify-center px-8 py-20 text-center overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-1" style={{ background: C.olive }} />
             <div className="absolute inset-0 pointer-events-none" style={{
-              backgroundImage: `radial-gradient(ellipse 80% 60% at 50% 50%, #f5ede0 0%, transparent 70%)`,
-              opacity: 0.35
+              backgroundImage: `radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,255,255,0.15) 0%, transparent 70%)`,
+              opacity: 1
             }} />
             <div className="relative z-10">
               <p className="font-cormorant italic font-light text-[22px] leading-relaxed mb-8" style={{ color: C.text }}>
