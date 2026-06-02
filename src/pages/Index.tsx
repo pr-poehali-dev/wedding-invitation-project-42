@@ -393,12 +393,18 @@ export default function Index() {
             <p className="font-cormorant font-light text-[17px] leading-relaxed mb-8" style={{ color: C.textMid }}>
               Мы будем очень рады, если вы<br />поддержите цветовую гамму праздника
             </p>
-            <img
-              src="https://cdn.poehali.dev/projects/a540970c-91ee-4184-9179-bffb7270ac57/bucket/16d70a4c-f04e-4670-b73d-7174ae0a35f3.jpeg"
-              alt="Дресс-код"
-              className="w-full h-auto"
-              style={{ filter: "contrast(1.08) saturate(1.12) brightness(1.02)" }}
-            />
+            <div className="relative p-3" style={{ border: `1px solid ${C.olive}40` }}>
+              <span className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2" style={{ borderColor: C.olive }} />
+              <span className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2" style={{ borderColor: C.olive }} />
+              <span className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2" style={{ borderColor: C.olive }} />
+              <span className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2" style={{ borderColor: C.olive }} />
+              <img
+                src="https://cdn.poehali.dev/projects/a540970c-91ee-4184-9179-bffb7270ac57/bucket/136631dd-b069-4cc8-9085-8bba7cbcd8e7.jpeg"
+                alt="Дресс-код"
+                className="w-full h-auto"
+                style={{ filter: "contrast(1.06) saturate(1.10) brightness(1.02)" }}
+              />
+            </div>
           </section>
 
           {/* Разделитель */}
