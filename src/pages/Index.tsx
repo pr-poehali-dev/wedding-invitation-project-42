@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import Icon from "@/components/ui/icon";
 
 const WEDDING_DATE = new Date("2026-08-08T16:00:00");
 const CONFIRM_URL = "https://functions.poehali.dev/89ebb219-0410-4069-b584-255ca16e1982";
@@ -75,11 +76,38 @@ export default function Index() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [playing, setPlaying] = useState(false);
+
+  const toggleAudio = () => {
+    if (!audioRef.current) return;
+    if (playing) {
+      audioRef.current.pause();
+      setPlaying(false);
+    } else {
+      audioRef.current.play().then(() => setPlaying(true)).catch(() => {});
+    }
+  };
+
   const handleOpen = () => {
     if (phase !== "cover") return;
     setRipples([Date.now()]);
     setPhase("opening");
-    setTimeout(() => setPhase("content"), 1400);
+    setTimeout(() => {
+      setPhase("content");
+      if (audioRef.current) {
+        audioRef.current.volume = 0;
+        audioRef.current.play().then(() => {
+          setPlaying(true);
+          let v = 0;
+          const fade = setInterval(() => {
+            v = Math.min(v + 0.02, 0.35);
+            if (audioRef.current) audioRef.current.volume = v;
+            if (v >= 0.35) clearInterval(fade);
+          }, 100);
+        }).catch(() => {});
+      }
+    }, 1400);
   };
 
   const handleConfirm = async (e: React.FormEvent) => {
@@ -102,6 +130,21 @@ export default function Index() {
 
   return (
     <div className={`min-h-screen font-cormorant ${phase === "cover" ? "fabric-idle" : "fabric-live"}`}>
+
+      {/* АУДИО */}
+      <audio ref={audioRef} loop src="https://cdn.pixabay.com/audio/2023/10/08/audio_a54ff04775.mp3" />
+
+      {/* КНОПКА МУЗЫКИ */}
+      {phase === "content" && (
+        <button
+          onClick={toggleAudio}
+          className="fixed bottom-6 right-6 z-50 w-11 h-11 rounded-full flex items-center justify-center shadow-lg transition-all duration-300"
+          style={{ background: C.brown, color: C.cream, opacity: 0.85 }}
+          title={playing ? "Выключить музыку" : "Включить музыку"}
+        >
+          <Icon name={playing ? "Music" : "VolumeX"} size={18} />
+        </button>
+      )}
 
       {/* ЗАСТАВКА */}
       {phase !== "content" && (
