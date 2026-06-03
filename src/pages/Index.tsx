@@ -132,7 +132,7 @@ export default function Index() {
     <div className={`min-h-screen font-cormorant ${phase === "cover" ? "fabric-idle" : "fabric-live"}`}>
 
       {/* АУДИО */}
-      <audio ref={audioRef} loop src="https://cdn.pixabay.com/audio/2023/10/08/audio_a54ff04775.mp3" />
+      <audio ref={audioRef} loop src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" />
 
       {/* КНОПКА МУЗЫКИ */}
       {phase === "content" && (
